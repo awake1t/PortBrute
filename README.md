@@ -22,6 +22,7 @@
 ### 已完成
   - [x] 支持多协议 FTP/SSH/SMB/MSSQL/MYSQL/POSTGRESQL/MONGOD
   - [x] 支持非常规端口
+  - [x] 支持user:pass 字典模式 [2020-0829]
 
 ### 待完成
   - [ ] 爆破时更完美的进度展示

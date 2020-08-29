@@ -1,7 +1,6 @@
 package plugins_test
 
 import (
-	"asset-scan/plugins"
 	"testing"
 )
 

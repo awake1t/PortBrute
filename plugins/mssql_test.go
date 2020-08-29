@@ -1,7 +1,7 @@
 package plugins_test
 
 import (
-	"asset-scan/plugins"
+	"PortBrute/plugins"
 	"testing"
 )
 

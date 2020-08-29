@@ -125,16 +125,16 @@ func waitTimeout(wg *sync.WaitGroup, timeout time.Duration) bool {
 	}
 }
 
-//func GenerateTaskTmp(addr []models.IpAddr, userList []string) (scanTasks []models.Service) {
-//	for _, u := range userList {
-//		uk := strings.Split(u,":")
-//			for _, ip := range addr {
-//				scanTask := models.Service{Ip: ip.Ip, Port: ip.Port, Protocol: ip.Protocol, UserName: uk[0], PassWord: uk[1]}
-//				scanTasks = append(scanTasks, scanTask)
-//			}
-//	}
-//	return
-//}
+func GenerateTaskUserPass(addr []models.IpAddr, userList []string) (scanTasks []models.Service) {
+	for _, u := range userList {
+		uk := strings.Split(u,":")
+			for _, ip := range addr {
+				scanTask := models.Service{Ip: ip.Ip, Port: ip.Port, Protocol: ip.Protocol, UserName: uk[0], PassWord: uk[1]}
+				scanTasks = append(scanTasks, scanTask)
+			}
+	}
+	return
+}
 
 func GenerateTask(addr []models.IpAddr, userList []string, passList []string) (scanTasks []models.Service) {
 	//每个都生成一个空的账号密码，用于爆破空账号密码
