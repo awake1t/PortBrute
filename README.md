@@ -9,7 +9,6 @@
 > ​	Windows/MAC/Linux已经打包好了，分别对应(PortBruteWin.exe/PortBruteMac/PortBruteLinux)。无论是内网渗透，还是日常使用，直接下载下来就可以直接用。
 
 ![image](https://github.com/awake1t/PortBrute/blob/master/common/example1.png)
-![image](https://github.com/awake1t/PortBrute/blob/master/common/example.png)
 
 
 ### 快速开始
@@ -23,6 +22,7 @@
   - [x] 支持多协议 FTP/SSH/SMB/MSSQL/MYSQL/POSTGRESQL/MONGOD
   - [x] 支持非常规端口
   - [x] 支持user:pass 字典模式 [2020-0829]
+  - [x] 爆破时看到进度，增加了跑马灯 [2020-0926]
 
 ### 待完成
   - [ ] 爆破时更完美的进度展示

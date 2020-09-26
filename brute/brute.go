@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"github.com/cheggaaa/pb/v3"
 	"time"
 )
 
@@ -80,19 +81,19 @@ func RunTask(scanTasks []models.Service, thread int) {
 	}
 
 	// 生产者，不断的把生产要扫描的数据，存放到 channel，直到channel阻塞
-	//bar := pb.StartNew(len(scanTasks))
+	bar := pb.StartNew(len(scanTasks))
 
 	for _, task := range scanTasks {
 		wg.Add(1)
 		taskChan <- task
-		//bar.Increment()
-
-	}
+		bar.Increment()
+  	}
+	//bar.Increment()
 
 	// 生产完成后，从生产方关闭task
 	close(taskChan)
 
-	//bar.Finish()
+	bar.Finish()
 
 	wg.Wait()
 	waitTimeout(wg, 3*time.Second)
@@ -100,6 +101,13 @@ func RunTask(scanTasks []models.Service, thread int) {
 	WriteToFile("\n全部扫描完成\n", "res.txt")
 
 	color.Red("Scan complete. %d vulnerabilities found! \n", len(bruteResult))
+
+	for _,v := range bruteResult{
+		color.Cyan("[+] %s %d %s %s \n",v.Ip,v.Port,v.UserName,v.PassWord)
+	}
+
+
+
 
 }
 
@@ -127,11 +135,11 @@ func waitTimeout(wg *sync.WaitGroup, timeout time.Duration) bool {
 
 func GenerateTaskUserPass(addr []models.IpAddr, userList []string) (scanTasks []models.Service) {
 	for _, u := range userList {
-		uk := strings.Split(u,":")
-			for _, ip := range addr {
-				scanTask := models.Service{Ip: ip.Ip, Port: ip.Port, Protocol: ip.Protocol, UserName: uk[0], PassWord: uk[1]}
-				scanTasks = append(scanTasks, scanTask)
-			}
+		uk := strings.Split(u, ":")
+		for _, ip := range addr {
+			scanTask := models.Service{Ip: ip.Ip, Port: ip.Port, Protocol: ip.Protocol, UserName: uk[0], PassWord: uk[1]}
+			scanTasks = append(scanTasks, scanTask)
+		}
 	}
 	return
 }

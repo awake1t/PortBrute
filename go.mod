@@ -3,6 +3,7 @@ module PortBrute
 go 1.14
 
 require (
+	github.com/cheggaaa/pb/v3 v3.0.5
 	github.com/denisenkom/go-mssqldb v0.0.0-20200620013148-b91950f658ec
 	github.com/fatih/color v1.9.0
 	github.com/go-redis/redis v6.15.9+incompatible

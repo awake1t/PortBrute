@@ -16,6 +16,7 @@ import (
 
 func usage() {
 	fmt.Fprintf(os.Stderr, `支持协议FTP/SSH/SMB/MSSQL/MYSQL/POSTGRESQL/MONGOD.
+快速开始: ./PortBruteMac
 `)
 	flag.PrintDefaults()
 }
