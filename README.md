@@ -4,9 +4,9 @@
 
 ### 使用说明
 
- 		ip.txt中放入需要爆破的ip+端口，比如 `10.10.10.10:3306`。  如果不是标准端口，比如3307是MYSQL。写成 `10.10.10.10:3307|MYSQL`。 其他`FTP/SSH/SMB/MSSQL/MYSQL/POSTGRESQL/MONGOD`同理
- 		
- 		Windows/MAC/Linux已经打包好了，分别对应(PortBruteWin.exe/PortBruteMac/PortBruteLinux)。无论是内网渗透，还是日常使用，直接下载下来就可以直接用。
+	ip.txt中放入需要爆破的ip+端口，比如 `10.10.10.10:3306`。  如果不是标准端口，比如3307是MYSQL。写成 `10.10.10.10:3307|MYSQL`。 其他`FTP/SSH/SMB/MSSQL/MYSQL/POSTGRESQL/MONGOD`同理
+	 		
+	Windows/MAC/Linux已经打包好了，分别对应(PortBruteWin.exe/PortBruteMac/PortBruteLinux)。无论是内网渗透，还是日常使用，直接下载下来就可以直接用。
 
 ![image](https://github.com/awake1t/PortBrute/blob/master/common/example1.png)
 
@@ -25,7 +25,7 @@
   - [x] 爆破时看到进度，增加了跑马灯 [2020-0926]
 
 ### 待完成
-  - [ ] 自动根据爆破的协议去选择不同的字典
+  - [ ] 自动根据爆破的协议去选择不同的字典,更加方便
 
     
 
